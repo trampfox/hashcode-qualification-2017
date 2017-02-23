@@ -17,7 +17,8 @@ public class CacheServer {
 
   private final Integer size;
 
-  public CacheServer(Integer size) {
+  public CacheServer(Integer id, Integer size) {
+    this.id = id;
     this.size = size;
   }
 
