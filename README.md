@@ -1,1 +1,1 @@
-# hashcode-qualification-2017
+# pizza-exercise
