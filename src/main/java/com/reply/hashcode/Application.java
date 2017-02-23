@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.reply.hashcode.helpers.FileHelper;
 import com.reply.hashcode.helpers.MatrixHelper;
+import org.apache.commons.math3.distribution.AbstractIntegerDistribution;
 
 public class Application {
 
@@ -12,12 +13,12 @@ public class Application {
     FileHelper fileHelper = new FileHelper();
     String folder = "C:\\Users\\m.omodei\\Documents\\HashCode\\Ghost-Buggers-Solution\\";
     String inputFilePath = folder + "test.in";
-	String outputFilePath = folder + "test.out";
-	List<String> header = fileHelper.readFileHeader(inputFilePath);
-	Map<String, Integer> parameters = MatrixHelper.readMatrixParameters(header);
-	List<String> lines = fileHelper.readFileContentByLine(inputFilePath);
+	  String outputFilePath = folder + "test.out";
+	  List<String> header = fileHelper.readFileHeader(inputFilePath);
+	  Map<String, Integer> parameters = MatrixHelper.readMatrixParameters(header);
+	  List<String> lines = fileHelper.readFileContentByLine(inputFilePath);
 	//fileHelper.writeOutputFile(servers, outputFilePath);
-    
+
   }
   
 }
