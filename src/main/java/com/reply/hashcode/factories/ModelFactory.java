@@ -44,7 +44,7 @@ public class ModelFactory {
 			_videos.add(new Video(i, Integer.valueOf(videoSizes[0])));
 		}
 		
-		int currentIndex = 1;
+		int currentIndex = 2;
 		String[] currentLine = null;
 		// ENDPOINT
 		for(int e=0;e<nEndPoints;e++)
@@ -73,7 +73,7 @@ public class ModelFactory {
 			ep.setCacheServerList(cacheServers);
 			ep.setLatencies(latencies);
 			_enpointMap.put(ep.getId(), ep);
-			
+			System.out.println(currentIndex);
 		}
 		
 		
