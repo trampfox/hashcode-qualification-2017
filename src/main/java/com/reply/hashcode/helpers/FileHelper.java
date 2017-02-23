@@ -1,5 +1,10 @@
 package com.reply.hashcode.helpers;
 
+import com.reply.hashcode.CacheServer;
+import com.reply.hashcode.OutputRow;
+import com.reply.hashcode.Server;
+
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -42,12 +47,20 @@ public class FileHelper {
     return header;
   }
 
-  /*public void writeOutputFile(final List<Server> servers,
+  public void writeOutputFile(final List<CacheServer> cacheServers,
                               final String outputFilename) {
     final List<OutputRow> outputRows = new ArrayList<>();
+    final List<CacheServer> usedCacheServers = new ArrayList<>();
 
-    for (Server server: servers) {
-      outputRows.add(new OutputRow(server.getId(), server.getRow(), server.getSlot(), server.getPoolId()));
+    for (CacheServer cacheServer: cacheServers) {
+      if (cacheServer.getVideos().size() > 0) {
+        usedCacheServers.add(cacheServer);
+      }
+    }
+
+    for (CacheServer cacheServer: usedCacheServers) {
+      OutputRow outputRow = new OutputRow(cacheServer.getId(), cacheServer.getVideos());
+      outputRows.add(outputRow);
     }
 
     //Use try-with-resource to get auto-closeable writer instance
@@ -64,6 +77,6 @@ public class FileHelper {
       e.printStackTrace();
     }
 
-  }*/
+  }
 
 }

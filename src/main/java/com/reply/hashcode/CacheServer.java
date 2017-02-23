@@ -37,6 +37,26 @@ public class CacheServer {
     this.latency = latency;
   }
 
+  public List<Video> getVideos() {
+    return videos;
+  }
+
+  public void setVideos(List<Video> videos) {
+    this.videos = videos;
+  }
+
+  public Integer getSizeAvailable() {
+    return sizeAvailable;
+  }
+
+  public void setSizeAvailable(Integer sizeAvailable) {
+    this.sizeAvailable = sizeAvailable;
+  }
+
+  public Integer getSize() {
+    return size;
+  }
+
   public void addVideo(final Video video) {
 
     if (sizeAvailable - video.getSize() < 0) {
