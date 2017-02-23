@@ -80,7 +80,7 @@ public class ModelFactory {
 		
 		List<Request> requests = new ArrayList<>();	
 		for(int r = 0; r < nRequests; r++){
-			currentIndex++;
+			
 			currentLine = _lines.get(currentIndex).split(" ");
 			Integer idEnpoint = Integer.valueOf(currentLine[0]);
 			Integer idVideo = Integer.valueOf(currentLine[1]);
@@ -88,6 +88,7 @@ public class ModelFactory {
 			Request tmp = new Request(_enpointMap.get(idEnpoint), _videos.get(idVideo), nunReq);
 			_videos.get(idVideo).addRequest(tmp);
 			requests.add(tmp);
+			currentIndex++;
 		}
 		
 		

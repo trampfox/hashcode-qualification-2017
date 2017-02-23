@@ -1,5 +1,6 @@
 package com.reply.hashcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class Video /*implements Comparable*/ {
 
   private Integer totRequests;
 
-  private List<Request> requests;
+  private List<Request> requests = new ArrayList<Request>();
 
   private Integer size;
 
