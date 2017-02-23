@@ -6,8 +6,23 @@ package com.reply.hashcode;
 public class CacheServer {
 
   private Integer id;
+  private Integer size;
 
-  private Integer latency;
+  public Integer getSize() {
+	return size;
+}
+
+
+public void setSize(Integer size) {
+	this.size = size;
+}
+
+private Integer latency;
+  
+  public CacheServer(Integer id, Integer size){
+	  this.id = id;
+	  this.size = size;
+  }
 
 
   public Integer getId() {
