@@ -36,4 +36,16 @@ public class CacheServer {
   public void setLatency(Integer latency) {
     this.latency = latency;
   }
+
+  public void addVideo(final Video video) {
+
+    if (sizeAvailable - video.getSize() < 0) {
+      throw new IllegalStateException("Cache server out of capacity.");
+    }
+    else {
+      sizeAvailable -= video.getSize();
+      this.videos.add(video);
+    }
+
+  }
 }
