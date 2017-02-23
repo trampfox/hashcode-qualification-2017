@@ -27,6 +27,9 @@ public class Video /*implements Comparable*/ {
 	this.size = size;
 }
 
+  public void addRequest(Request r) {
+	  this.requests.add(r);
+  }
 
 
 public void setId(Integer id) {

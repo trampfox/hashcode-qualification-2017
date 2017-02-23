@@ -25,6 +25,10 @@ public class ModelFactory {
 		this._enpointMap = new HashMap<>();
 	}
 	
+	public List<Video> getVideos() {
+		return _videos;
+	}
+	
 	public void build(){
 		String[] firstLine = _lines.get(0).split(" ");
 		
@@ -80,7 +84,9 @@ public class ModelFactory {
 			Integer idEnpoint = Integer.valueOf(currentLine[0]);
 			Integer idVideo = Integer.valueOf(currentLine[1]);
 			Integer nunReq = Integer.valueOf(currentLine[2]);
-			requests.add(new Request(_enpointMap.get(idEnpoint), _videos.get(idVideo), nunReq));
+			Request tmp = new Request(_enpointMap.get(idEnpoint), _videos.get(idVideo), nunReq);
+			_videos.get(idVideo).addRequest(tmp);
+			requests.add(tmp);
 		}
 		
 		
