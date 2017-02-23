@@ -18,8 +18,18 @@ public class Video {
   public Integer getId() {
     return id;
   }
+  
+  
 
-  public void setId(Integer id) {
+  public Video(Integer id, Integer size) {
+	super();
+	this.id = id;
+	this.size = size;
+}
+
+
+
+public void setId(Integer id) {
     this.id = id;
   }
 
