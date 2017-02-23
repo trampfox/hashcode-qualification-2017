@@ -24,7 +24,7 @@ public class FileHelper {
 
     try(Stream<String> stream = Files.lines(Paths.get(filename))) {
 
-      lines = stream.skip(1).collect(Collectors.toList());
+      lines = stream.collect(Collectors.toList());
 
     } catch (IOException e) {
       e.printStackTrace();

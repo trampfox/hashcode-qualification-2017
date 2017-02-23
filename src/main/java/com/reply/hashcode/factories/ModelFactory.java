@@ -49,9 +49,9 @@ public class ModelFactory {
 		// ENDPOINT
 		for(int e=0;e<nEndPoints;e++)
 		{	
-			currentIndex++;
-			currentLine = _lines.get(currentIndex).split(" ");
 			
+			currentLine = _lines.get(currentIndex).split(" ");
+			currentIndex++;
 			Integer datacenterLatency = Integer.valueOf(currentLine[0]);
 			Integer nCaches = Integer.valueOf(currentLine[1]);
 			
@@ -63,16 +63,17 @@ public class ModelFactory {
 			// EP - LATENCY
 			for(int c=0 ;c < nCaches; c++)
 			{
-				currentIndex++;
+				
 				currentLine = _lines.get(currentIndex).split(" ");
 				cacheServers.add(new CacheServer(c, cacheSize));
 				
 				latencies.add(Integer.valueOf(currentLine[1]));
-				
+				currentIndex++;
 			}
 			ep.setCacheServerList(cacheServers);
 			ep.setLatencies(latencies);
 			_enpointMap.put(ep.getId(), ep);
+			
 		}
 		
 		
