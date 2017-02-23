@@ -10,9 +10,9 @@ public class Video /*implements Comparable*/ {
 
   private Integer id;
 
-  private Integer totRequests;
+  private Integer totRequests = 0;
 
-  private List<Request> requests = new ArrayList<Request>();
+  private List<Request> requests;
 
   private Integer size;
 
@@ -26,6 +26,8 @@ public class Video /*implements Comparable*/ {
 	super();
 	this.id = id;
 	this.size = size;
+	requests = new ArrayList<Request>();
+
 }
 
   public void addRequest(Request r) {

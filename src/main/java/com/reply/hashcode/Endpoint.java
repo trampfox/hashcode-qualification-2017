@@ -1,5 +1,6 @@
 package com.reply.hashcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class Endpoint {
   public Endpoint(Integer id, Integer datacenterLatency){
 	  this.id = id;
 	  this.datacenterLatency = datacenterLatency;
+	  cacheServerList = new ArrayList<CacheServer>();
   }
   
   public Integer getId() {

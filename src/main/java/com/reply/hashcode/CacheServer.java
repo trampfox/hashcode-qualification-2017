@@ -1,5 +1,6 @@
 package com.reply.hashcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,8 @@ public class CacheServer {
   public CacheServer(Integer id, Integer size) {
     this.id = id;
     this.size = size;
+    this.sizeAvailable = size;
+    videos = new ArrayList<Video>();
   }
 
   public Integer getId() {

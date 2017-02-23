@@ -1,6 +1,8 @@
 package com.reply.hashcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +22,8 @@ public class Application {
 	List<String> lines = fileHelper.readFileContentByLine(inputFilePath);
 	ModelFactory factory = new ModelFactory(lines);
 	factory.build();
-	factory.getVideos();
+	List<Video> videos = factory.getVideos();
 	ArrayList<Endpoint> endpoints = null;
-	ArrayList<Video> videos = null;
 	ArrayList<CacheServer> servers = null;
 	ArrayList<Request> requests = null;
 	
@@ -30,6 +31,8 @@ public class Application {
 	
 	while(videos.size() > 0) {
 		Video vid = videos.remove(0);
+		if(vid.getRequests().size() == 0)
+			continue;
 		Request req = vid.getRequests().get(0);
 		Endpoint endP = req.getEndpoint();
 		Integer best = Integer.MAX_VALUE;
@@ -72,7 +75,14 @@ public class Application {
 		}
 		if(bestCS != null &vid.getTotRequests() > 0) {
 			videos.add(vid);
-			//SORTTTTT
+			Collections.sort(videos, new Comparator<Video>(){
+
+				@Override
+				public int compare(Video o1, Video o2) {
+					return o1.getTotRequests() - o2.getTotRequests();
+				}
+					
+			});
 		}
 	}
 

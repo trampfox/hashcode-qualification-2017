@@ -87,6 +87,10 @@ public class ModelFactory {
 			Integer nunReq = Integer.valueOf(currentLine[2]);
 			Request tmp = new Request(_enpointMap.get(idEnpoint), _videos.get(idVideo), nunReq);
 			_videos.get(idVideo).addRequest(tmp);
+			_videos.get(idVideo).setTotRequests(_videos.get(idVideo).getTotRequests() + 
+					nunReq
+					);
+			
 			requests.add(tmp);
 			currentIndex++;
 		}
