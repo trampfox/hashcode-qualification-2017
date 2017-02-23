@@ -10,9 +10,17 @@ public class Request {
   private Video video;
 
   private Integer numOfRequests;
+  
+  
 
 
-  public Endpoint getEndpoint() {
+  public Request(Endpoint endpoint, Video video, Integer numOfRequests) {
+	this.endpoint = endpoint;
+	this.video = video;
+	this.numOfRequests = numOfRequests;
+}
+
+public Endpoint getEndpoint() {
     return endpoint;
   }
 

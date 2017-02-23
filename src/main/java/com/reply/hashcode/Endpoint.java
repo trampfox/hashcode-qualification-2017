@@ -17,7 +17,11 @@ public class Endpoint {
 
   private List<Request> requests;
 
-
+  public Endpoint(Integer id, Integer datacenterLatency){
+	  this.id = id;
+	  this.datacenterLatency = datacenterLatency;
+  }
+  
   public Integer getId() {
     return id;
   }
