@@ -5,13 +5,13 @@ import java.util.List;
 /**
  * Created by trampfox on 23/02/17.
  */
-public class Video {
+public class Video /*implements Comparable*/ {
 
   private Integer id;
 
   private Integer totRequests;
 
-  private List<Endpoint> endopoints;
+  private List<Request> requests;
 
   private Integer size;
 
@@ -31,12 +31,12 @@ public class Video {
     this.totRequests = totRequests;
   }
 
-  public List<Endpoint> getEndopoints() {
-    return endopoints;
+  public List<Request> getRequests() {
+    return requests;
   }
 
-  public void setEndopoints(List<Endpoint> endopoints) {
-    this.endopoints = endopoints;
+  public void setEndopoints(List<Request> requests) {
+    this.requests = requests;
   }
 
   public Integer getSize() {
@@ -46,4 +46,5 @@ public class Video {
   public void setSize(Integer size) {
     this.size = size;
   }
+  
 }
