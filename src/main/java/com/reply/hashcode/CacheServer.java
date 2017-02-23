@@ -9,9 +9,27 @@ public class CacheServer {
 
   private Integer id;
 
-  private Integer latency;
+  public List<Video> getVideos() {
+	return videos;
+}
 
-  private List<Video> videos;
+public void setVideos(List<Video> videos) {
+	this.videos = videos;
+}
+
+public Integer getSizeAvailable() {
+	return sizeAvailable;
+}
+
+public void setSizeAvailable(Integer sizeAvailable) {
+	this.sizeAvailable = sizeAvailable;
+}
+
+public Integer getSize() {
+	return size;
+}
+
+private List<Video> videos;
 
   private Integer sizeAvailable;
 
@@ -27,14 +45,6 @@ public class CacheServer {
 
   public void setId(Integer id) {
     this.id = id;
-  }
-
-  public Integer getLatency() {
-    return latency;
-  }
-
-  public void setLatency(Integer latency) {
-    this.latency = latency;
   }
 
   public void addVideo(final Video video) {
